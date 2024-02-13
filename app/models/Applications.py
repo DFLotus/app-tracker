@@ -6,7 +6,7 @@ def ApplicationModel(conn: psycopg2.extensions.connection) -> None:
         cur.execute(
             """
             CREATE TABLE IF NOT EXISTS Applications (
-                listingID SERIAL PRIMARY KEY,
+                id SERIAL PRIMARY KEY,
                 position TEXT NOT NULL,
                 salary DECIMAL(10, 2),
                 location TEXT NOT NULL,
