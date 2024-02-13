@@ -5,7 +5,7 @@ import sys
 sys.path.append(os.path.dirname(os.path.realpath(__file__)))
 from db_Config import connect_to_db
 from routes import hello
-from models import User
+from models import User, Applications
 
 
 # To run the application type in following command:  flask --app app  run --debug
@@ -24,6 +24,7 @@ def create_app(test_config=None) -> Flask:
 
     #Register models
     User.UserModel(app.db_conn)
+    Applications.ApplicationModel(app.db_conn)
 
     # When connection is closed the application is terminated
     @app.teardown_appcontext
